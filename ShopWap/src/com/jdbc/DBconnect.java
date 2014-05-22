@@ -1,0 +1,137 @@
+package com.jdbc;
+import java.sql.*;
+
+public class DBconnect {
+	
+	static {
+		try {
+			Driver driver = (Driver) Class.forName("org.postgresql.Driver").newInstance();
+			DriverManager.registerDriver(driver);
+			System.out.println("创建驱动成功！");
+		} 
+		catch (InstantiationException e) {
+			e.printStackTrace();
+		} 
+		catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+	
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private DBconnect() {}
+	
+	public static Connection getConn() {
+		
+		try {
+			Connection dbcon = DriverManager.getConnection("jdbc:postgresql://localhost/shop", "postgres", "123456");
+			System.out.println("连接数据库成功！");
+			return dbcon;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static Statement getStmt(Connection conn) {
+		Statement stmt = null;
+		try {
+			stmt = conn.createStatement();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return stmt;
+	}
+	
+	public static PreparedStatement getPStmt(Connection conn,String sql) {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return pstmt;
+	}
+	
+	public static PreparedStatement getPStmt(Connection conn,String sql,boolean generatedKey) {
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return pstmt;
+	}
+	
+	public static ResultSet executeQuery(Statement stmt,String sql) {
+		ResultSet rs = null;
+		try {
+			rs = stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	
+	public static ResultSet executeQuery(Connection conn,String sql) {
+		ResultSet rs = null;
+		try {
+			rs = conn.createStatement().executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return rs;
+	}
+	
+	public static int executeUpdate(Connection conn,String sql) {
+		int rs = 0;
+		Statement stmt = null;
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	
+	public static void close(Connection conn) {
+		if(conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			conn = null;
+		}
+	}
+	
+	public static void close(Statement stmt) {
+		if(stmt != null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			stmt = null;
+		}
+	}
+	
+	public static void close(ResultSet rs) {
+		if(rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			rs = null;
+		}
+	}
+
+}
+

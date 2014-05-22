@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>com.search.web.SearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ItemsServlet</servlet-name>
+    <servlet-class>com.item.web.ItemsServlet</servlet-class>
+  </servlet>
+
+ <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.login.web.loginServlet</servlet-class>
+  </servlet>
+  
+  
+    <servlet>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>com.index.web.IndexServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowNoticeServlet</servlet-name>
+    <servlet-class>com.notice.web.ShowNoticeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TypeServlet</servlet-name>
+    <servlet-class>com.type.web.TypeServlet</servlet-class>
+  </servlet>  
+  <servlet>
+    <servlet-name>SellServlet</servlet-name>
+    <servlet-class>com.sell.web.SellServlet</servlet-class>
+  </servlet>
+  
+  
+  
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login/login.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/search/search.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ItemsServlet</servlet-name>
+    <url-pattern>/items/items.do</url-pattern>
+  </servlet-mapping>	
+  
+  
+      <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/index.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowNoticeServlet</servlet-name>
+    <url-pattern>/notice/showNotice.do</url-pattern>
+  </servlet-mapping>	
+  
+   <servlet-mapping>
+    <servlet-name>TypeServlet</servlet-name>
+    <url-pattern>/type/type.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ShowShopServlet</servlet-name>
+    <servlet-class>com.shop.web.showShopServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>shopCarServlet</servlet-name>
+    <servlet-class>com.shopcar.web.shopCarServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>com.order.web.OrderServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>ShowShopServlet</servlet-name>
+    <url-pattern>/shop/showShop.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>shopCarServlet</servlet-name>
+    <url-pattern>/shopcar/shopcar.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/order/order.do</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>queryShopItemsServlet</servlet-name>
+    <servlet-class>com.shop.web.QueryShopItemsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>myInfo</servlet-name>
+    <servlet-class>com.buy.web.MyInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>myOrderServlet</servlet-name>
+    <servlet-class>com.buy.web.MyOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>payServlet</servlet-name>
+    <servlet-class>com.pay.web.payServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>logisticServlet</servlet-name>
+    <servlet-class>com.logistic.web.logisticServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>SellActionServlet</servlet-name>
+    <servlet-class>com.sell.web.SellActionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>logManageServlet</servlet-name>
+    <servlet-class>com.logistic.web.logManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>adminServlet</servlet-name>
+    <servlet-class>com.admin.web.adminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>adminManageServlet</servlet-name>
+    <servlet-class>com.admin.web.adminManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>topServlet</servlet-name>
+    <servlet-class>com.top10.web.topServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>msgServlet</servlet-name>
+    <servlet-class>com.msg.web.msgServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>logShowServlet</servlet-name>
+    <servlet-class>com.logistic.web.logShowServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>ShowShopServlet</servlet-name>
+    <url-pattern>/shop/showShop.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>queryShopItemsServlet</servlet-name>
+    <url-pattern>/shop/QueryShopItemsServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>myInfo</servlet-name>
+    <url-pattern>/buy/myInfo.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>myOrderServlet</servlet-name>
+    <url-pattern>/buy/myOrderServlet.do</url-pattern>
+  </servlet-mapping>
+      <servlet-mapping>
+    <servlet-name>SellServlet</servlet-name>
+    <url-pattern>/sell/sell.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>payServlet</servlet-name>
+    <url-pattern>/pay/pay.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>logisticServlet</servlet-name>
+    <url-pattern>/logistic/logistic.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SellActionServlet</servlet-name>
+    <url-pattern>/sell/sellaction.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>logManageServlet</servlet-name>
+    <url-pattern>/logistic/logManage.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>adminServlet</servlet-name>
+    <url-pattern>/admin/admin.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>adminManageServlet</servlet-name>
+    <url-pattern>/admin/adminManage.do</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>topServlet</servlet-name>
+    <url-pattern>/top/top.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>msgServlet</servlet-name>
+    <url-pattern>/msg/msg.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>logShowServlet</servlet-name>
+    <url-pattern>/logistic/logshow.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.do</welcome-file>
+  </welcome-file-list>
+</web-app>

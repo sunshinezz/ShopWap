@@ -1,0 +1,91 @@
+package com.order.dao;
+
+import java.sql.Timestamp;
+
+public class Order {
+	private int id;
+	private int itemId;
+	private int memId;
+	private int waybill;
+	private int state;
+	private Timestamp date;
+	private int judgeId;
+	private int num;
+	private String name;
+	private String address;
+	private String phone;
+	private double price;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getItemId() {
+		return itemId;
+	}
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+	public int getMemId() {
+		return memId;
+	}
+	public void setMemId(int memId) {
+		this.memId = memId;
+	}
+	public int getWaybill() {
+		return waybill;
+	}
+	public void setWaybill(int waybill) {
+		this.waybill = waybill;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	public Timestamp getDate() {
+		return date;
+	}
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
+	public int getJudgeId() {
+		return judgeId;
+	}
+	public void setJudgeId(int judgeId) {
+		this.judgeId = judgeId;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+}
