@@ -155,9 +155,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</ul>   
 	</div>
 	<div class="new-ct bind">
-		<form id="select" name="select" action="/ShopWap/shopcar/shopcar.do?action=confirm" method="post" >
+		<form id="select" name="select" action="/ShopWap/shopcar/shopcar.do?action=confirm" method="post" onsubmit="javascript:doValidate();">
 			<div class="new-pay-pw">   		
 				<div class="new-set-info">
+				
+						<c:if test="${addresslist!= null }">
+						<c:forEach items="${addresslist}" var="address" varStatus="status">
+						&nbsp;&nbsp;
+						<c:if test="${status.index==0}">
+							<input type="radio" value="${status.index}" name="addid" checked="true"/> 
+						</c:if>
+						<c:if test="${status.index!=0}">
+							<input type="radio" value="${status.index}" name="addid"/> 
+						</c:if>
+						&nbsp;收货人：${address.name } &nbsp;地址：${address.address }
+						&nbsp;联系电话：${address.phone }  
+						<c:if test="${status.index==0}">
+						[默认]
+						</c:if>
+						<br/>
+						</c:forEach>
+						</c:if>
+						<c:if test="${addresslist!=null }">
+						&nbsp;&nbsp;&nbsp;<input type="radio" value="3" name="addid"/> &nbsp;其他：
+						</c:if>
+						<c:if test="${addresslist==null }">
+						&nbsp;&nbsp;&nbsp;<input type="radio" value="3" name="addid" checked="true"/> &nbsp;其他：
+						</c:if>
+				
 					<input type="hidden" name="id" value="${item.id}"/>
 					<input type="hidden" name="addid" value="3"/> 
 					<p  id="p_msg" style="display:none;" ></p>
@@ -174,7 +199,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span  id="second" class="new-get-num" style="display:none;"></span>
 					</span>
 					<div class="new-txt-err" id="passwordNull" ></div>
-					<a href="javascript:check();"  class="new-abtn-type new-mg-t15" id="registsubmit" >提交订单</a>
+					<a href="javascript:fsubmit();"  class="new-abtn-type new-mg-t15" id="registsubmit" >提交订单</a>
 				</div>
 				<div id="nameNull" class="new-txt-err" ></div>
 			</div>	
@@ -188,26 +213,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<input type="hidden" id="resourceValue" value="" />
 	<script type="text/javascript" src="../js/html5/cart.js"></script>
 	<script>
-		function check()
+		function fsubmit()
 		{ 
-		  var phone = document.getElementsByName("phone")[0];
+		  
 		  var form= document.getElementsByName("select")[0];
-		  var address= document.getElementsByName("address")[0];
-		  if(form.name.value.length==0)
-		  {
-			  alert("用户名不能为空");
-			  return false;
-		  } 
-		  if(form.phone.value.length!=11)
-		  {
-			  alert("请输入正确的电话号码!");
-			  return false;
-		   } 
-		   if(form.address.value.length==0)
-		   {
-			  alert("地址不能为空");
-			  return false;
-		   } 
+		  var id = document.getElementsByName("addid");
+			var other=0;
+			for(i=0;i<id.length;i++)
+			{
+				if(id[i].value==3 && id[i].checked)
+					other=1;
+			}
+			if(other==1)
+			{
+				
+				var name=document.getElementsByName("name");
+				var address=document.getElementsByName("address");
+				var phone=document.getElementsByName("phone");
+				if(name[0].value.length==0)
+				{
+					alert("请输入收货人姓名！");
+					return false;
+				}
+				if(address[0].value.length==0)
+				{
+					alert("请输入收货人地址！");
+					return false;
+				}
+				if(phone[0].value.length==0)
+				{
+					alert("请输入联系电话！");
+					return false;
+				}
+			}
 		   form.submit();
 		} 
     	
