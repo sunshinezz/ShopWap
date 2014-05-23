@@ -163,6 +163,23 @@ public class userDao {
 		}
 		return false;
 	}
+	public boolean changePasswd(String account,String passwd){
+		try{
+			Connection conn = DBconnect.getConn();
+			String sql = "UPDATE \"member\" SET \"password\"=? WHERE \"account\"=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, passwd);
+			ps.setString(2, account);
+			if(ps.executeUpdate()>0){
+				ps.close();
+				conn.close();
+				return true;
+			}
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 }
 

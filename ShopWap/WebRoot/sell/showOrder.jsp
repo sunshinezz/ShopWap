@@ -5,10 +5,11 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
+ 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>我的w购</title>
+		<title>订单详情</title>
 		<meta name="author" content="m.jd.com">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,8 +18,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta http-equiv="Expires" CONTENT="-1">           
 		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
 		<meta http-equiv="Pragma" CONTENT="no-cache">           
-		<link rel="stylesheet" type="text/css" href="../css/base2013.css?v=20140414100001" charset="gbk"/>
-		<link rel="stylesheet" type="text/css" href="../css/myhome.css" charset="gbk"/>	
+		<link rel="stylesheet" type="text/css" href="/ShopWap/css/base2013.css?v=20140414100001" charset="gbk"/>
+		<link rel="stylesheet" type="text/css" href="/ShopWap/css/address.css" charset="gbk"/>	
 		
 		<script type="text/javascript">
 			var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
@@ -95,13 +96,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<script type="text/javascript" src="../js/html5/common.js?v=201401141358"></script>
         <script type="text/javascript" src="../js/html5/spin.min.js"></script>
 	</head>
-
 	<body id="body">
 	<a name="top"></a>
 	<header>
 		<div class="new-header">
 			<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
-			<h2>我的we购</h2>
+			<h2>卖家中心</h2>
 			<a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>we键</span></a>
 		</div>
 		<div class="new-jd-tab" style="display:none" id="jdkey">
@@ -114,100 +114,87 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="icon2">分类搜索</span>
 					<p style="color:#6e6e6e;">分类搜索</p>
 				</a>
-				<a href="/ShopWap/shopcar/shopcar.do?action=show" id="html5_cart" class="new-tbl-cell">
-					<span class="icon3">购物车</span>
-					<p style="color:#6e6e6e;">购物车</p>
+				<a href="#" id="" class="new-tbl-cell">
+					<span class="icon3"> </span>
+					<p style="color:#6e6e6e;"> </p>
 				</a>
-				<a href="/ShopWap/buy/myOrderServlet.do?action=myw" class="new-tbl-cell">
-					<span class="icon4">我的京东</span>
-					<p style="color:#6e6e6e;">我的京东</p>
+				<a href="/ShopWap/sell/sell.do?action=myw" class="new-tbl-cell">
+					<span class="icon4">卖家中心</span>
+					<p style="color:#6e6e6e;">卖家中心</p>
 				</a>
 			</div>
 		</div>
 	</header>
-	<div class="new-ct">
-			<div class="new-user-infobox">
-			<a class="new-user-photo">
-				<img src='../images/html5/defaul.png' width="75" height="75"/>
-			</a>
-			<div class="new-bg-img">
-				<div class="new-user-info">
-					<div>
-						<span class="new-txt"><span class="new-txt-float new-elps">${ cookie.account.value }</span><span class="new-block-ctr">0</span></span>
-						<span class="new-txt2"><span class="new-txt-float new-elps"></span><span class="new-block-ctr">积分</span></span>
-					</div>
-					<a class="new-a-message" href="/ShopWap/msg/msg.do?action=buy">
-						<span class="new-txt4">消息</span>
-						<span class="new-txt3">1</span>
-					</a>
-				</div>
-			</div>
-			<div class="new-user-info2">
-				<div class="new-info-tbl-box">
-					<div class="new-info-tbl">
-						<a class="new-tbl-cell" href='#'>
-							<span>0</span>
-							<span>we币</span>
-						</a>
-						<a class="new-tbl-cell" href='/ShopWap/pay/pay.do?action=torecharge'>
-							<span>￥${balance }</span>
-							<span>余额</span>
-						</a>
-						<a class="new-tbl-cell" href='#'>
-							<span> <font color="gray">0</font>  </span>
-							<span>优惠劵</span>
-						</a>
-						<a class="new-tbl-cell" href='#'>
-							<span> <font color="gray">0</font> </span>
-							<span>we卡</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<%
-		 ArrayList<Integer> numlist = (ArrayList<Integer>)request.getAttribute("numlist");
-	%>
-	<div class="new-section-lst">
-		<ul class="new-lst-ul">
-			<li class="new-lst-li">
-				<a href='/ShopWap/buy/myOrderServlet.do?action=mylike'>
-					我的关注<span class="new-arr"></span>
-				</a>
-			</li>
+ 
+    <div class="new-ct">
+	<div class="new-addr">   
+		<ul class="new-mu_l2w">
+				<li class="new-mu_l2">
+					<p class="new-tit new-p-re">
+						<span class="new-txt">${order.itemName}</span>
+						<span class="new-txt-rd2">￥${order.price }</span>
+						<span class="new-txt-rd2 new-option-r" ><span class="new-icon2"></span></span> 
+					</p>
+					<span class="new-mu_l2a new-p-re">
+						<span class="new-mu_l2cw">			
+							订单编号：${order.id }<br />
+							支付方式：在线支付<br />
+							配送方式：普通快递<br />
+							下单时间：${order.date }
+						</span>    
+					</span>
+					<span class="new-mu_l2a new-p-re">
+						<span class="new-mu_l2cw">			
+							发票类型：普通发票<br />
+							发票抬头：个人<br />
+							发票内容：明细
+						</span>    
+					</span>
+					<span class="new-mu_l2a new-p-re">
+						<span class="new-mu_l2cw">			
+							商品金额：${order.price }元 + 
+							运费：0.00元 - 
+							优惠金额：0.00元-
+							使用余额：0.00元
+							= 
+							订单总金额：<strong class="h1">${order.price }</strong>
+						</span>    
+					</span>
+					
+					<span class="new-mu_l2a new-p-re">
+						<span class="new-mu_l2cw">
+							收货人姓名：${order.name }<br />
+							地址：${order.address }&nbsp; &nbsp;邮编：<br />						
+							手机号码：${order.phone }   <br />  
+						</span>    
+						
+						<div class="new-addr-btn">
+						</div>
+					</span>
+				</li>
 		</ul>
-		<ul class="new-lst-ul">
-			<li class="new-lst-li">
-				<a href="/ShopWap/buy/myOrderServlet.do?action=showOrder&state=2">待收货订单<span class="txt-rd">(<%= numlist.get(9)%>)</span><span class="new-arr"></span></a>
+    </div>
+</div>
 
-			</li>
-			<li class="new-lst-li">
+<script type="text/javascript">
 
-				<a href="/ShopWap/buy/myOrderServlet.do?action=showOrder&state=0">待付款订单<span class="txt-rd">(<%= numlist.get(7)%>)</span><span class="new-arr"></span></a>
-
-			</li>
-			<li class="new-lst-li">
-
-				<a href="/ShopWap/buy/myOrderServlet.do?action=showOrder&state=1">待发货<span class="txt-rd">(<%= numlist.get(8)%>)</span><span class="new-arr"></span></a>
-
-			</li>
-			<li class="new-lst-li">
-				<a href='/ShopWap/buy/myOrderServlet.do?action=showAddress'>收货地址管理<span class="new-arr"></span></a>
-			</li>
-		</ul>
-		<ul class="new-lst-ul">
-			<li class="new-lst-li">
-				<a href='/ShopWap/login/changePasswd.jsp' >修改登录密码<span class="new-arr"></span></a>
-			</li>
-			<li class="new-lst-li">                         
-				<a href='#' >重置支付密码<span class="new-arr"></span></a>
-			</li>
-		</ul>
-		
-	</div>
+	  function  delClick(param){
+		if (confirm("确定要删除收货地址吗？")){
+		       var id = $(param).attr("addressId");
+		        jQuery.get('/address/doDelete.json?',
+				{addressId:id},
+				function(data){
+					    if(data.isSuccess == "T"){ //提交表单到未绑定的手机验证
+						  window.location.href='/address/addressList.action?sid=24fbb35a860be8f8212d18928939f614';
+						}else{
+						   alert('删除失败');
+						}
+					});
+			}
+	}
 
 
+</script>
 	<div class="login-area" id="footer">
 		<div class="login">
 			<% 
@@ -242,81 +229,81 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div style="display:none;">
 		<img src="ja.jsp@&utmn=1670342429&utmr=-&utmp=_252Findex_252Findex.action_253Fv_253Dt&guid=ON&jav=html5&pin=-&utmac=MO-J2011-1" />
 	</div>
-		<script type="text/javascript">
-		$("#unsupport").hide();
-		if(!testLocalStorage()){ //not support html5
-			if(0!=0 && !$clearCart && !$teamId){
-				$("#html5_cart_num").text(0>0>0);
-			}
-		}else{
-			updateToolBar('');
-		}
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
 
-		$("#html5_cart").click(function(){
-		//	syncCart('cb4a3639cc29d400efb04ed9b084c9ef',true);
-			location.href='/cart/cart.action';
-		});
+$("#html5_cart").click(function(){
+//	syncCart('24fbb35a860be8f8212d18928939f614',true);
+	location.href='/cart/cart.action';
+});
 
-		function reSearch(){
-		var depCity = window.sessionStorage.getItem("airline_depCityName");
-			if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
-				var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
-				+'<input type="hidden" name="sid"  value="cb4a3639cc29d400efb04ed9b084c9ef"/>'
-				+'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
-				+'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
-				+'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
-				+'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
-				+'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
-				+'</form>';
-				$("body").append(airStr);
-				$("#reseach").submit();
-			}else{
-				window.location.href='/airline/index.action?sid=cb4a3639cc29d400efb04ed9b084c9ef';
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="24fbb35a860be8f8212d18928939f614"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='/airline/index.action?sid=24fbb35a860be8f8212d18928939f614';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+	$(document).ready(function(){
+		var _loadScript = function(url, options,cb){
+			var script = document.createElement("script");
+			var def = {
+				type: "text/javascript",
+				charset:"utf-8"
 			}
+			options= options|| {
+			}
+			for(var i in options){
+				def[i] = options[i];
+			}
+			script.src = url;
+			
+			for(var i in def){
+				script.setAttribute(i,def[i]);
+			}
+			script.addEventListener("load",function(){
+				cb && cb();
+			},false)
+			document.getElementsByTagName("head")[0].appendChild(script);
 		}
-		 //banner 关闭点击
-			$('.div_banner_close').click(function(){
-				$('#div_banner_header').unbind('click');
-				jQuery.post('/index/addClientCookieVal.json',function(d){
-					  $('#div_banner_header').slideUp(500);
-				});
+		
+		if($(".download-con").length){
+			_loadScript("/js/2013/installapp.js?v=20140422100001",{},function(){
 			});
-			//banner 下载点击
-			$('.div_banner_download').click(function(){
-				 var downloadUrl = $(this).attr('url');
-				 jQuery.post('/index/addClientCookieVal.json',function(d){
-					   window.location.href=downloadUrl;
-				});
-			});
-			$(document).ready(function(){
-				var _loadScript = function(url, options,cb){
-					var script = document.createElement("script");
-					var def = {
-						type: "text/javascript",
-						charset:"utf-8"
-					}
-					options= options|| {
-					}
-					for(var i in options){
-						def[i] = options[i];
-					}
-					script.src = url;
-					
-					for(var i in def){
-						script.setAttribute(i,def[i]);
-					}
-					script.addEventListener("load",function(){
-						cb && cb();
-					},false)
-					document.getElementsByTagName("head")[0].appendChild(script);
-				}
-				
-				if($(".download-con").length){
-					_loadScript("/js/2013/installapp.js?v=20140422100001",{},function(){
-					});
-				}
-				
-			})
-		</script>
-	</body>
+		}
+		
+	})
+</script>
+</body>
 </html>

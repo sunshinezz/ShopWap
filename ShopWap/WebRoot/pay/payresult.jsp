@@ -22,13 +22,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link rel="stylesheet" type="text/css" href="../css/extend.css" charset="gbk"/>
 		<link rel="stylesheet" type="text/css" href="../css/hotel.css" charset="gbk"/>
 		<link rel="stylesheet" type="text/css" href="../css/airline.css" charset="gbk"/>
-		
-		<link rel="stylesheet" type="text/css" href="/ShopWap/css/header.css" />
-		<link rel="stylesheet" type="text/css" href="/ShopWap/css/top-search.css"/>
-		<link rel="stylesheet" type="text/css" href="/ShopWap/css/top-show.css"/>
-		<link rel="stylesheet" type="text/css" href="/ShopWap/css/shopcar/main.css" />
-		<link rel="stylesheet" type="text/css" href="/ShopWap/css/shopcar/order.css" />
-		
 		<link rel="apple-touch-icon-precomposed" href="http://m.jd.com/images/apple-touch-icon.png"/>
 		
 		<script type="text/javascript">

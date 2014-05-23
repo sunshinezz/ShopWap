@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<header>
 		<div class="new-header">
 			<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
-			<h2>购物车</h2>
+			<h2>登陆</h2>
 			<a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>we键</span></a>
 		</div>
 		<div class="new-jd-tab" style="display:none" id="jdkey">
@@ -76,9 +76,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <span class="new-tbl-cell">
                         <a rel="nofollow" href='/ShopWap/login/register.jsp' class="new-fl" >免费注册</a>
                     </span>
-                    <span class="new-tbl-cell text-right">
-                        <a href='/findloginpassword/fillAccountName.action?sid=2b72c124b28940efb1893c45b423c653' class="new-fr"> 找回密码</a>  
-					</span>
                 </div>
             </div>
     	</div>
@@ -243,14 +240,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 
 	
 </script>
-<%
+		<%
 			if (request.getAttribute("Error") != null) {
 			String error=request.getAttribute("Error").toString();
 			//System.out.println(error);
 			
 		%>
 		<br >
-		<h3><span style="color:red" align="center"><%= error %></span></h3>
+		<h5><span style="color:red" align="center"><%= error %></span></h5>
 		</br>
 		<%
 		}

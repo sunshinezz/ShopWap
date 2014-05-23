@@ -1,28 +1,24 @@
-<%@ page language="java" import="java.util.*,com.notice.dao.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
- 
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>	充值 - We购触屏版</title>
-    	<meta name="author" content="m.jd.com">
+		<title>我的w购</title>
+		<meta name="author" content="m.jd.com">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
 		<meta http-equiv="Expires" CONTENT="-1">           
 		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
-		<meta http-equiv="Pragma" CONTENT="no-cache">   
-        
-		<link rel="stylesheet" type="text/css" href="../css/base.css?v=20140414100001" charset="gbk"/>
-		<link rel="stylesheet" type="text/css" href="../css/extend.css" charset="gbk"/>
-		<link rel="stylesheet" type="text/css" href="../css/hotel.css" charset="gbk"/>
-		<link rel="stylesheet" type="text/css" href="../css/airline.css" charset="gbk"/>
-		<link rel="apple-touch-icon-precomposed" href="http://m.jd.com/images/apple-touch-icon.png"/>
+		<meta http-equiv="Pragma" CONTENT="no-cache">           
+		<link rel="stylesheet" type="text/css" href="../css/base2013.css?v=20140414100001" charset="gbk"/>
+		<link rel="stylesheet" type="text/css" href="../css/myhome.css" charset="gbk"/>	
 		
 		<script type="text/javascript">
 			var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
@@ -96,136 +92,123 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				document.write('<script src="../js/jquery-1.6.2.min.js"><\/script>');
 			}
 		</script>
-		
 		<script type="text/javascript" src="../js/html5/common.js?v=201401141358"></script>
-		<script type="text/javascript" src="../js/html5/spin.min.js"></script>
+        <script type="text/javascript" src="../js/html5/spin.min.js"></script>
 	</head>
 
 	<body id="body">
-		<a name="top"></a>
-		<header>
-			<div class="new-header">
-				<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
-				<h2>我的we购</h2>
-				<a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>we键</span></a>
+	<a name="top"></a>
+	<header>
+		<div class="new-header">
+			<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
+			<h2>卖家中心</h2>
+			<a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>we键</span></a>
+		</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+			<div class="new-tbl-type">
+				<a href="/ShopWap/index.jsp" class="new-tbl-cell">
+					<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+				</a>
+				<a href="/ShopWap/type/type.jsp" class="new-tbl-cell">
+					<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+				</a>
+				<a href="#" id="" class="new-tbl-cell">
+					<span class="icon3"> </span>
+					<p style="color:#6e6e6e;"> </p>
+				</a>
+				<a href="/ShopWap/sell/sell.do?action=myw" class="new-tbl-cell">
+					<span class="icon4">卖家中心</span>
+					<p style="color:#6e6e6e;">卖家中心</p>
+				</a>
 			</div>
-			<div class="new-jd-tab" style="display:none" id="jdkey">
-				<div class="new-tbl-type">
-					<a href="/ShopWap/index.jsp" class="new-tbl-cell">
-						<span class="icon">首页</span>
-						<p style="color:#6e6e6e;">首页</p>
-					</a>
-					<a href="/ShopWap/type/type.jsp" class="new-tbl-cell">
-						<span class="icon2">分类搜索</span>
-						<p style="color:#6e6e6e;">分类搜索</p>
-					</a>
-					<a href="/ShopWap/shopcar/shopcar.do?action=show" id="html5_cart" class="new-tbl-cell">
-						<span class="icon3">购物车</span>
-						<p style="color:#6e6e6e;">购物车</p>
-					</a>
-					<a href="/ShopWap/buy/myOrderServlet.do?action=myw" class="new-tbl-cell">
-						<span class="icon4">我的京东</span>
-						<p style="color:#6e6e6e;">我的京东</p>
+		</div>
+	</header>
+	<div class="new-ct">
+			<div class="new-user-infobox">
+			<a class="new-user-photo">
+				<img src='../images/html5/defaul.png' width="75" height="75"/>
+			</a>
+			<div class="new-bg-img">
+				<div class="new-user-info">
+					<div>
+						<span class="new-txt"><span class="new-txt-float new-elps">${ cookie.account.value }</span><span class="new-block-ctr">0</span></span>
+						<span class="new-txt2"><span class="new-txt-float new-elps"></span><span class="new-block-ctr">积分</span></span>
+					</div>
+					<a class="new-a-message" href="mymsg.jsp">
+						<span class="new-txt4">消息</span>
+						<span class="new-txt3">1</span>
 					</a>
 				</div>
 			</div>
-		</header>
-		
-		<div class="order-tip">
-			
-			<DIV style="DISPLAY: none" id="safeinfo" class="m m3"> </DIV>
-			<DIV class="o-mt">
-			  <H2>充值操作</H2>
-			</DIV>
+			<div class="new-user-info2">
+				<div class="new-info-tbl-box">
+					<div class="new-info-tbl">
+						<a class="new-tbl-cell" href='#'>
+							<span>0</span>
+							<span>we币</span>
+						</a>
+						<a class="new-tbl-cell" href='/ShopWap/pay/pay.do?action=torecharge'>
+							<span>￥${balance }</span>
+							<span>余额</span>
+						</a>
+						<a class="new-tbl-cell" href='#'>
+							<span> <font color="gray">0</font>  </span>
+							<span>优惠劵</span>
+						</a>
+						<a class="new-tbl-cell" href='#'>
+							<span> <font color="gray">0</font> </span>
+							<span>we卡</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%
+		 ArrayList<Integer> numlist = (ArrayList<Integer>)request.getAttribute("numlist");
+	%>
+	<div class="new-section-lst">
+		<ul class="new-lst-ul">
+			<li class="new-lst-li">
+				<a href="/ShopWap/sell/sell.do?action=paying">待付款订单<span class="txt-rd"></span><span class="new-arr"></span></a>
 
-			<DIV id="order02" class="m m5">
-			  <DIV class="mt">
-			   <DIV class="clr"> </DIV>
-			  </DIV>
-			  <DIV class="mc">
-				<DIV class="tb-void">
-					<script type="text/javascript" language="javascript">
-						 function doValidate()
-						 {
-						   
-							var count = document.getElementsByName("count")[0].value;
-							var reg = new RegExp("^[0-9]*$");
-							if(!reg.test(count))
-							{
-								alert("请输入正确的金额!");
-								return false;
-							}  
-							return true;
-						 }
-					</script>
-				<form name="select" action="/ShopWap/pay/pay.do" method="post" onsubmit="return doValidate();">
-				  <input type="hidden" name="action" value="recharge"/>
-				  <TABLE border="0" cellSpacing="0" cellPadding="0" width="100%">
-					<TBODY>
-					  <TR>
-						<TH width="150"> 用户ID </TH>
-						<TH width="150"> 账号 </TH>
-						<TH width="150"> 姓名</TH>
-						<TH width="150"> 余额 </TH>
-					  </TR>
-					</TBODY>
-					<TBODY id="tb-820609066" class="parent-815410507">
-				
-					  <TR id="track820609066" oty="0">
-						 <TD>
-						 ${user.id}
-						 </TD> 
-						<TD>
-						${user.account }
-						</TD>
-						<TD>
-						${user.name }
-						</TD>
-						 <TD>
-						 ${balance }
-						</TD>
-					  </TR>
-					
-					</TBODY>
-				  </TABLE>
-				  <br/>
-					&nbsp;&nbsp;&nbsp;充值金额：<input type="text" name="count"/><BR/>
-				   
-				   <a><p><input type="submit" value="确认充值" class="sub_btn"></p></a>
-				  </form>
-				</DIV>
-			  </DIV>
-			</DIV>
-			<DIV class="m clearfix">
-			<DIV class="pagin fr">
-				
-            </DIV>
-		</div>
-		<div class="pay-tip">
-		    <p>请在24小时内完成支付，过时订单将会被自动取消。<br/></p>
-		</div>
+			</li>
+			<li class="new-lst-li">
+
+				<a href="/ShopWap/sell/sell.do?action=deliver">待发货订单<span class="txt-rd"></span><span class="new-arr"></span></a>
+
+			</li>
+			<li class="new-lst-li">
+
+				<a href="/ShopWap/sell/sell.do?action=recieve">待确认收货订单<span class="txt-rd"></span><span class="new-arr"></span></a>
+
+			</li>
+			<li class="new-lst-li">
+				<a href='/ShopWap/sell/sell.do?action=judge'>待评价订单<span class="new-arr"></span></a>
+			</li>
+			<li class="new-lst-li">
+				<a href='/ShopWap/sell/sell.do?action=finish'>已完成订单<span class="new-arr"></span></a>
+			</li>
+		</ul>
+		<ul class="new-lst-ul">
+			<li class="new-lst-li">
+				<a href='/ShopWap/sell/sell.do?action=myrepair' >返修/退货<span class="new-arr"></span></a>
+			</li>
+			<li class="new-lst-li">
+				<a href='/ShopWap/sell/sell.do?action=myrefund' >取消订单记录<span class="new-arr"></span></a>
+			</li>
+		</ul>
+		<ul class="new-lst-ul">
+			<li class="new-lst-li">
+				<a href='/ShopWap/sell/sellaction.do?action=showallitems' >所有商品<span class="new-arr"></span></a>
+			</li>
+		</ul>
 		
-		
-		
-		<div style="display:none;"><img height="1" width="1" alt="" src="http://www.googleadservices.com/pagead/conversion/1066677870/imp.gif?label=LYIpCP7ZgAIQ7uzQ_AM&amp;guid=ON&amp;script=0"/></div>
-		<input  type="hidden" id="sid" value="a7a7f53a1ecf86a5af543c61903e2a76"/>
-		
-		<script type="text/javascript" src="../js/touch_order_common.js"></script>
-		<script>
-			$("#body").addClass("orderList");
-			initVar('','','','','a7a7f53a1ecf86a5af543c61903e2a76');
-			
-			if(true){
-				clearCart();
-			}
-			
-			if (true && window.androidPad) { //androidpad下单成功清除购物车
-				 window.androidPad.clearShoppingCart();			 
-			}
-			function goAndroidPad(){
-				 window.androidPad.orderFinish();	
-			}
-		</script>
+	</div>
+
+
 	<div class="login-area" id="footer">
 		<div class="login">
 			<% 
@@ -263,15 +246,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<script type="text/javascript">
 		$("#unsupport").hide();
 		if(!testLocalStorage()){ //not support html5
-			if(1!=0 && !true && !$teamId){
-				$("#html5_cart_num").text(1>0>0);
+			if(0!=0 && !$clearCart && !$teamId){
+				$("#html5_cart_num").text(0>0>0);
 			}
 		}else{
 			updateToolBar('');
 		}
 
 		$("#html5_cart").click(function(){
-		//	syncCart('a7a7f53a1ecf86a5af543c61903e2a76',true);
+		//	syncCart('cb4a3639cc29d400efb04ed9b084c9ef',true);
 			location.href='/cart/cart.action';
 		});
 
@@ -279,7 +262,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		var depCity = window.sessionStorage.getItem("airline_depCityName");
 			if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
 				var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
-				+'<input type="hidden" name="sid"  value="a7a7f53a1ecf86a5af543c61903e2a76"/>'
+				+'<input type="hidden" name="sid"  value="cb4a3639cc29d400efb04ed9b084c9ef"/>'
 				+'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
 				+'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
 				+'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
@@ -289,7 +272,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$("body").append(airStr);
 				$("#reseach").submit();
 			}else{
-				window.location.href='/airline/index.action?sid=a7a7f53a1ecf86a5af543c61903e2a76';
+				window.location.href='/airline/index.action?sid=cb4a3639cc29d400efb04ed9b084c9ef';
 			}
 		}
 		 //banner 关闭点击

@@ -70,10 +70,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="new-input-span mg-b15"><input type="text" value=""  class="new-input" name="loginaccount" id="loginaccount" value="" placeholder="请输入用户名/邮箱/已验证手机" onkeydown="changeColor(0,event)"/></span>
 					<span class="new-input-span mg-b15"><input type="password" value="" class="new-input" name="nloginpwd" id="nloginpwd" placeholder="请输入密码" onkeydown="changeColor(1,event)"/></span>
 						<input type="hidden" id="remember" value="true" name="remember"/>
-					<a class="new-a-txt3" href="javascript:fsubmit(document.login);">
-					<span class="new-chk2" onclick="remeber()"></span>
-						一个月内免登录
-					</a>
 					<a href="javascript:fsubmit(document.login);" id="loginSubmit" class="new-abtn-type new-mg-t15">登录</a>
 				 </form>
 				 <div class="login-register">

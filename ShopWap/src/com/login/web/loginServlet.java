@@ -124,6 +124,29 @@ public class loginServlet extends HttpServlet {
 						.forward(request, response);
 			}
 		}
+		if(action.equals("changePasswd")){
+			String newPasswd = request.getParameter("newPasswd");
+			String oldPasswd = request.getParameter("oldPasswd");
+			for(Cookie cookie:request.getCookies()){
+				if(cookie.getName().equals("account")){
+					account = cookie.getValue();
+				}
+			}
+			userDao usrDao = new userDao();
+			User user=usrDao.queryByAccount(account);
+			if(user.getPassword().equals(oldPasswd)){
+				if(usrDao.changePasswd(account, newPasswd)){
+					request.getRequestDispatcher("changePasswdOk.jsp").forward(request,response);
+				} else{
+					request.setAttribute("Error", "ÐÞ¸ÄÊ§°Ü");
+					request.getRequestDispatcher("changePasswd.jsp").forward(request, response);
+				}
+			} else{
+				request.setAttribute("Error", "ÃÜÂë´íÎó");
+				request.getRequestDispatcher("changePasswd.jsp").forward(request, response);
+			}
+			
+		}
 		out.flush();
 		out.close();
 	}

@@ -99,7 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<header>
 		<div class="new-header">
 			<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
-			<h2>商品详情</h2>
+			<h2>购物车</h2>
 			<a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>we键</span></a>
 		</div>
 		<div class="new-jd-tab" style="display:none" id="jdkey">
@@ -142,14 +142,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			</div>
             <div class="detail-price">
-            	<span class="text" id="price">&yen;${item.price }  </span> 
-				
-			</div>
+            	<span class="text" id="price">&yen;${item.price }  </span> <a class="btn-sc" id="attention"><span></span></a>            </div>
         </div>
 
     	<div class="secton10">
             <div class="info">
-                <a href="#">
+                <a href="/detail/1105763842.html?resourceType=list&resourceValue=9783&sid=c9c69ac685f868916e14f8f32da210ca">
                     <span class="text">商品信息</span>
                 </a>
                 <span class="icon-arr"></span>
@@ -374,23 +372,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 	</div>
 </div>
-<span class="pop-attention"  style="position:absolute;z-index:9999;display:none" id="save">
- 	<span class="icon-succ" id="guanzhu">关注成功</span>
-</span>
+		<span class="pop-attention"  style="position:absolute;z-index:9999;display:none" id="save">
+			<span class="icon-succ" id="guanzhu">关注成功</span>
+		</span>
 
-<div class="new-gd-view-img" id="popImg" style="position:absolute;display:none;z-index:9000" onclick="hidePop()">
-	<div class="new-banner new-p-re">
-        <ul class="new-tbl-type" style="position:absolute;margin-left:0" id="bigImgSlider">
-							                    					<li class="new-tbl-cell"><a href="javascript:void(0)"><span class="new-shade-img"><img src="http://img12.360buyimg.com/n1/g13/M02/1F/17/rBEhUlMw6HgIAAAAAAR8aRF8v44AAKqdAIBET8ABHyB899.jpg!q70.jpg" width="300" height="300" alt=""></span></a></li>
-					                                                                                                                            			        </ul>
-        <ul class="new-banner-num new-tbl-type" id="bigImgSliderPage">
-							                <li class="new-tbl-cell on"><a href="javascript:void(0)"></a></li>
-				                <li class="new-tbl-cell "><a href="javascript:void(0)"></a></li>
-				                <li class="new-tbl-cell "><a href="javascript:void(0)"></a></li>
-				                <li class="new-tbl-cell "><a href="javascript:void(0)"></a></li>
-							        </ul>
-    </div>
-</div>
+	<div class="new-gd-view-img" id="popImg" style="position:absolute;display:none;z-index:9000" onclick="hidePop()">
+		<div class="new-banner new-p-re">
+			<ul class="new-tbl-type" style="position:absolute;margin-left:0" id="bigImgSlider">
+				<li class="new-tbl-cell"><a href="javascript:void(0)"><span class="new-shade-img"><img src="http://img12.360buyimg.com/n1/g13/M02/1F/17/rBEhUlMw6HgIAAAAAAR8aRF8v44AAKqdAIBET8ABHyB899.jpg!q70.jpg" width="300" height="300" alt=""></span></a></li>
+			</ul>
+			<ul class="new-banner-num new-tbl-type" id="bigImgSliderPage">
+				<li class="new-tbl-cell on"><a href="javascript:void(0)"></a></li>
+				<li class="new-tbl-cell "><a href="javascript:void(0)"></a></li>
+				<li class="new-tbl-cell "><a href="javascript:void(0)"></a></li>
+				<li class="new-tbl-cell "><a href="javascript:void(0)"></a></li>
+			</ul>
+		</div>
+	</div>
 
 	<div id="yuyuecart" style="width:100%;position:fixed;bottom:0;display:none">
     	<div class="tbl-type detail-tbn2">
