@@ -77,6 +77,41 @@ public class loginServlet extends HttpServlet {
 						.forward(request, response);
 			}
 		}
+		if(action.equals("loginsell")){
+			if (account.length() != 0 && password.length() != 0) {
+			userDao uDao=new userDao();
+			try {
+				User user=uDao.queryByAccount(account);
+				if (user.getPassword().equals(password))
+					{
+					account=URLEncoder.encode(account,"utf-8");
+					Cookie accountCookie = new Cookie("account",account);
+					System.out.println(accountCookie.getValue());
+					accountCookie.setPath("/");
+					response.addCookie(accountCookie);
+					// 重新请求本页面，参数中带有时间戳，禁止浏览器缓存页面内容
+					response.sendRedirect("../sell/myw.jsp");
+				} else {
+					request.setAttribute("Error", "用户名或密码错误!");
+					request.getRequestDispatcher(
+							"/login/login.jsp")
+							.forward(request, response);
+				}
+			}  catch (Exception e) {
+				request.setAttribute("Error", "用户名或密码错误!");
+				request.getRequestDispatcher(
+						"/login/login.jsp")
+						.forward(request, response);
+				// TODO: handle exception
+			}
+		}
+			else {
+				request.setAttribute("Error", "请输入用户名或密码!");
+				request.getRequestDispatcher(
+						"/login/login.jsp")
+						.forward(request, response);
+			}
+		}
 		if(action.equals("logout"))
 		{
 			if(request.getCookies() != null){					// 如果Cookie不为空

@@ -18,13 +18,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <meta name="format-detection" content="telephone=no">
 		<link rel="stylesheet" type="text/css" href="../css/base2013.css?v=20130806100001" charset="gbk"/>
 		<link rel="stylesheet" type="text/css" href="../css/login.css" charset="gbk"/>	
-		<link rel="apple-touch-icon-precomposed" href="http://m.jd.com/images/apple-touch-icon.png"/>
 		<script type="text/javascript" src="../js/jquery-1.6.2.min.js"></script>
 		<script type="text/javascript" src="../js/html5/common.js?v=201307121358"></script>
         <script type="text/javascript" src="../js/html5/spin.min.js"></script>
 		<script language="javascript">  //登录js
 			function fsubmit(obj){
-			obj.submit();
+				var userType = document.getElementsByName("userType");
+				var form = document.getElementById("formlogin");
+				
+				var other = 0;
+				for(i=0;i<userType.length;i++)
+				{
+					if(userType[i].checked)
+						other = userType[i].value;
+				}
+				if(other == 0){
+					form.action = "/ShopWap/login/login.do?action=login";
+				} else if(other == 1){
+					form.action = "/ShopWap/login/login.do?action=loginsell";
+				} else if(other == 2){
+					form.action = "/ShopWap/admin/admin.do?action=login";
+				} else if(other == 3){
+					form.action = "/ShopWap/logistic/logistic.do?action=login";
+				}
+				obj.submit();
 			}
 			function freset(obj){
 			obj.reset();
@@ -69,6 +86,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			    <span class="new-input-span mg-b15"><input type="text" value=""  class="new-input" name="loginaccount" id="loginaccount" value="" placeholder="请输入用户名/邮箱/已验证手机" onkeydown="changeColor(0,event)"/></span>
                 <span class="new-input-span mg-b15"><input type="password" value="" class="new-input" name="nloginpwd" id="nloginpwd" placeholder="请输入密码" onkeydown="changeColor(1,event)"/></span>
         			<input type="hidden" id="remember" value="true" name="remember"/>
+					<input type="radio" value="0" name="userType"/>买家
+					<input type="radio" value="1" name="userType"/>卖家
+					<input type="radio" value="2" name="userType"/>管理员
+					<input type="radio" value="3" name="userType"/>物流
                 <a href="javascript:fsubmit(document.login);" id="loginSubmit" class="new-abtn-type new-mg-t15">登录</a>
     		 </form>
 			 <div class="login-register">
@@ -259,7 +280,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 		%>
 		<br >
-		<h3><span style="color:red" align="center"><%= error %></span></h3>
+		<h5><span style="color:red" align="center"><%= error %></span></h5>
 		</br>
 		<%
 		}
@@ -268,16 +289,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="new-footer">
         <div class="new-f-login">					
     		<a href="/ShopWap/login/login.jsp">登录</a><span class="new-bar2">|</span><a href="/ShopWap/login/register.jsp">注册</a>
-				<span  class="new-back-top"><a href="http://m.jd.com/showvote.html?sid=2b72c124b28940efb1893c45b423c653">反馈</a><span class="new-bar2">|</span><a href="#top">回到顶部</a></span>
+				<span  class="new-back-top"><a href="#">反馈</a><span class="new-bar2">|</span><a href="#top">回到顶部</a></span>
             </div>
         	<div class="new-f-section"><a href="#">标准版</a><a href="javascript:void(0)" class="on">触屏版</a><a href="#">电脑版</a></div>
             <div class="new-f-section2"></div>
         </div>
     </footer>
-
-    <div style="display:none;">
-        	<img src="/ja.jsp?&amp;utmn=2075484644&amp;utmr=-&amp;utmp=%2Fuser%2Flogin.action%3Fsid%3D2b72c124b28940efb1893c45b423c653%26returnurl%3Dhttp%253A%252F%252Fm.jd.com%252Fuser%252Fhome.action%26ipChanged%3Dfalse&amp;guid=ON&jav=touch&pin=-&utmac=MO-J2011-1" />
-        </div>
 
 <script type="text/javascript">
 $("#unsupport").hide();
