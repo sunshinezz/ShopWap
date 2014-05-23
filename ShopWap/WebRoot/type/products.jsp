@@ -422,16 +422,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 			</div>
 			<div class="new-tbl-cell new-p-re">
             	<div class="new-a-page">
-                	<span class="new-open">1/3</span>
+                	<span class="new-open">1/1</span>
                 </div>
                 <select class="new-select" onchange="window.location.href=this.value;">
-					<option value="/products/1315-1342-1348-0-0-0-0-0-0-0-1-1-1.html?cid=1348&stock=&resourceType=&resourceValue=&sid=b39d6855934ae151afcd2d176cf7fb4e" selected>第1页</option>
-					<option value="/products/1315-1342-1348-0-0-0-0-0-0-0-1-1-2.html?cid=1348&stock=&resourceType=&resourceValue=&sid=b39d6855934ae151afcd2d176cf7fb4e" >第2页</option>
-					<option value="/products/1315-1342-1348-0-0-0-0-0-0-0-1-1-200.html?cid=1348&stock=&resourceType=&resourceValue=&sid=b39d6855934ae151afcd2d176cf7fb4e" >第200页</option>
+					<option value="#" selected>第1页</option>
+					
 				</select>
 			</div>
 			<div class="new-tbl-cell">
-				<a href='javascript:window.location.href="/products/1315-1342-1348-0-0-0-0-0-0-0-1-1-2.html?cid=1348&stock=&resourceType=&resourceValue=&sid=b39d6855934ae151afcd2d176cf7fb4e"' class="new-a-next"><span>下一页</span></a>
+				<span class="new-a-next">下一页</span>
 			</div>
 		</div>
 	</div>

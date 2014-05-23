@@ -99,7 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<header>
 		<div class="new-header">
 			<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
-			<h2>购物车</h2>
+			<h2>商品详情</h2>
 			<a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>we键</span></a>
 		</div>
 		<div class="new-jd-tab" style="display:none" id="jdkey">
@@ -117,8 +117,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p style="color:#6e6e6e;">购物车</p>
 				</a>
 				<a href="/ShopWap/buy/myOrderServlet.do?action=myw" class="new-tbl-cell">
-					<span class="icon4">我的京东</span>
-					<p style="color:#6e6e6e;">我的京东</p>
+					<span class="icon4">我的we购</span>
+					<p style="color:#6e6e6e;">我的we购</p>
 				</a>
 			</div>
 		</div>
@@ -142,12 +142,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			</div>
             <div class="detail-price">
-            	<span class="text" id="price">&yen;${item.price }  </span> <a class="btn-sc" id="attention"><span></span></a>            </div>
+            	            	<span class="text" id="price">&yen;${item.price }  </span> 
+				
+			</div>
+
         </div>
 
     	<div class="secton10">
             <div class="info">
-                <a href="/detail/1105763842.html?resourceType=list&resourceValue=9783&sid=c9c69ac685f868916e14f8f32da210ca">
+                <a href="#">
                     <span class="text">商品信息</span>
                 </a>
                 <span class="icon-arr"></span>
