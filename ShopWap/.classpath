@@ -6,7 +6,9 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="D:/development/work/ShopWap/WebRoot/WEB-INF/lib/commons-fileupload-1.3.jar"/>
-	<classpathentry kind="lib" path="D:/development/work/ShopWap/WebRoot/WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/shop/WebRoot/WEB-INF/lib/commons-fileupload-1.3.jar"/>
+	<classpathentry kind="lib" path="/shop/WebRoot/WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/javax.jms.jar"/>
+	<classpathentry kind="lib" path="F:/Java/jre8/lib/javax.servlet.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

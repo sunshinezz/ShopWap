@@ -88,7 +88,7 @@ public class logisticServlet extends HttpServlet {
 								accountCookie.setPath("/");
 								accountCookie.setMaxAge(0);
 								response.addCookie(accountCookie);
-								response.sendRedirect("../login/login2.jsp");
+								response.sendRedirect("../login/login.jsp");
 					}
 				}
 			}

@@ -1,0 +1,99 @@
+HTML
+{
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+BODY
+{
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+DIV
+{
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+SPAN
+{
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+A
+{
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+STRONG
+{
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+:focus
+{
+	outline-style: none;
+	outline-color: invert;
+	outline-width: 0px;
+}
+BODY
+{
+	font: 12px/150% Arial, Verdana, "ËÎÌו"; BACKGROUND: #fff;
+	color: #666;
+	_background-image: url(about:blank); _background-attachment: fixed;
+}
+A:link
+{
+	color: #666;
+	text-decoration: none;
+}
+.w
+{
+	margin: 0px auto;
+	width: 990px;
+}
+.breadcrumb
+{
+	padding-bottom: 4px;
+	line-height: 20px;
+	padding-left: 6px;
+	padding-right: 0px;
+	margin-bottom: 10px;
+	height: 20px;
+	vertical-align: baseline;
+	overflow: hidden;
+	padding-top: 0px;
+}
+.breadcrumb STRONG
+{
+	line-height: 20px;
+	display: inline;
+	font-family: "microsoft yahei"; FONT-SIZE: 18px;
+	font-weight: 700;
+}
+.breadcrumb SPAN
+{
+	font-family: "ËÎÌו";
+}
+.breadcrumb A:link
+{
+	color: #333333;
+}
+
+

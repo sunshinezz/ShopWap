@@ -29,7 +29,7 @@ public class DBconnect {
 	public static Connection getConn() {
 		
 		try {
-			Connection dbcon = DriverManager.getConnection("jdbc:postgresql://localhost/shop", "postgres", "331314");
+			Connection dbcon = DriverManager.getConnection("jdbc:postgresql://localhost/shop", "postgres", "123456");
 			System.out.println("连接数据库成功！");
 			return dbcon;
 		} catch (SQLException e) {

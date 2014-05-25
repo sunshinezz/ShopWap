@@ -89,7 +89,7 @@ public class adminServlet extends HttpServlet {
 								accountCookie.setPath("/");
 								accountCookie.setMaxAge(0);
 								response.addCookie(accountCookie);
-								response.sendRedirect("../login/login3.jsp");
+								response.sendRedirect("../login/login.jsp");
 					}
 				}
 			}

@@ -24,6 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link rel="stylesheet" type="text/css" href="../css/airline.css" charset="gbk"/>
 		<link rel="apple-touch-icon-precomposed" href="http://m.jd.com/images/apple-touch-icon.png"/>
 		
+		<link rel="stylesheet" type="text/css" href="/ShopWap/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="/ShopWap/css/top-search.css"/>
+		<link rel="stylesheet" type="text/css" href="/ShopWap/css/top-show.css"/>
+		<link rel="stylesheet" type="text/css" href="/ShopWap/css/shopcar/main.css" />
+		<link rel="stylesheet" type="text/css" href="/ShopWap/css/shopcar/order.css" />
+
+		
 		<script type="text/javascript">
 			var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
 			var _isWebKit = '__proto__' in {};//是否是webkit内核
