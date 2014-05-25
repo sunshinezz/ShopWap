@@ -146,6 +146,8 @@
 						<span  id="second" class="new-get-num" style="display:none;"></span>
 					</span>
 					<div class="new-txt-err" id="passwordNull" ></div>
+					<input type="radio" value="0" name="userType"/>买家
+					<input type="radio" value="1" name="userType"/>卖家
 					<a href="javascript:check();"  class="new-abtn-type new-mg-t15" id="registsubmit" >注册</a>
 				</div>
 				<div id="nameNull" class="new-txt-err" ></div>
