@@ -161,6 +161,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  </DIV>
 			  <DIV class="mc">
 				<DIV class="tb-void">
+<<<<<<< HEAD
 				<ul>
 				  <TABLE border="0" cellSpacing="0" cellPadding="0" width="100%">
 					
@@ -209,6 +210,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</DIV>-->
 			
 			
+=======
+				  <TABLE border="0" cellSpacing="0" cellPadding="0" width="100%">
+					<TBODY>
+					  <TR>
+						<TH width="100"> 运单号</TH>
+						<TH width="100"> 生成时间 </TH>
+						<TH width="100"> 完成时间 </TH>
+						<TH width="100"> 状态 </TH>
+						<TH width="100"> 操作</TH>
+					  </TR>
+					</TBODY>
+				   <c:forEach items="${loglist }" var="list">
+					<TBODY id="tb-820609066" class="parent-815410507">
+					  <TR id="track820609066" oty="0">
+						<TD><DIV class="o-type"> ${list.id } </DIV>
+						</TD>
+						<TD><SPAN class="ftx-03">${list.cDate } <BR />
+						  </SPAN>
+						</TD>
+						<TD><SPAN class="ftx-03">${list.eDate } <BR />
+						  </SPAN>
+						</TD>
+						<TD><SPAN class="ftx-03">已完成<BR />
+						  </SPAN>
+						</TD>
+						<TD id="operate820609066" class="order-doi" width="100">
+						<SPAN id="pay-button-820609066"></SPAN>
+						<A href="logManage.do?action=finishedshow&id=${list.id}" target="_blank" clstag="click|keycount|orderinfo|order_check">查看</A>
+						<SPAN id="order_comment"></SPAN><SPAN class="pop-recycle-a" jQuery1383550193134="54"> 
+						</TD>
+					  </TR>
+					</TBODY>
+					</c:forEach>
+					
+				  </TABLE>
+				</DIV>
+			  </DIV>
+			</DIV>
+			<DIV class="m clearfix">
+			  <DIV class="pagin fr">
+				<!--  <span class="text">共8条记录</span>    <span class="text">共1页</span> -->
+				<SPAN class="prev-disabled">上一页<B></B></SPAN>
+				<!-- <span class="prev-disabled">首页</span> -->
+				<A class="current">1</A>
+				<!-- <span class="next-disabled">末页</span>  -->
+				<SPAN class="next-disabled">下一页<B></B></SPAN> </DIV>
+			</DIV>
+>>>>>>> c30f14049065d0f3d6de5253e603e2fe930dd3db
 			
 		</div>
 		
@@ -257,7 +306,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 
 			<% if(login){ %>
+<<<<<<< HEAD
 				<a href="#"> 欢迎您, 物流：${ cookie.logistic.value }. </a>&nbsp;&nbsp; <span class="lg-bar">|</span>
+=======
+				<a href="/ShopWap/buy/myOrderServlet.do?action=myw"> 欢迎您, 物流：${ cookie.logistic.value }. </a>&nbsp;&nbsp; <span class="lg-bar">|</span>
+>>>>>>> c30f14049065d0f3d6de5253e603e2fe930dd3db
 				<a href="../logistic/logistic.do?action=logout">退出</a>
 			<% }
 				else { %> </a>

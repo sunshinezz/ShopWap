@@ -150,11 +150,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  <!--end-->
 				  <DIV id="remind">
 					<DIV class="oinfo">
+<<<<<<< HEAD
 					  
 						<DT> 运单提醒： </DT><br/>
 						<DD> <SPAN id="orderCount" clstag="click|keycount|myhome|ordercount"><A class="flk-03" href="logManage.do?action=unfinished">未完成运单(<SPAN id="reviewCount">${unum }</SPAN>)</A></SPAN> </DD>
 						<DD> <A id="reviewCountHref" href="logManage.do?action=finished" clstag="click|keycount|myhome|commentscount">已完成运单(<SPAN id="reviewCount">${fnum }</SPAN>)</A> </DD>
 					  
+=======
+					  <DL class="fore">
+						<DT> 运单提醒： </DT>
+						<DD> <SPAN id="orderCount" clstag="click|keycount|myhome|ordercount"><A class="flk-03" href="logManage.do?action=unfinished">未完成运单(<SPAN id="reviewCount">${unum }</SPAN>)</A></SPAN> </DD>
+						<DD> <A id="reviewCountHref" href="logManage.do?action=finished" clstag="click|keycount|myhome|commentscount">已完成运单(<SPAN id="reviewCount">${fnum }</SPAN>)</A> </DD>
+					  </DL>
+>>>>>>> c30f14049065d0f3d6de5253e603e2fe930dd3db
 					 <!-- <DL>
 						<DT> 消息精灵： </DT>
 						<DD> <A id="messageCountHref" class="flk-03" href="mymsg.jsp" clstag="click|keycount|myhome|messageCount">提醒/通知：(<SPAN id="messageCount">0</SPAN>)</A> </DD>

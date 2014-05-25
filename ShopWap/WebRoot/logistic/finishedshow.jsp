@@ -160,6 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  </DIV>
 			  <DIV class="mc">
 				<DIV class="tb-void">
+<<<<<<< HEAD
 				<ul>
 				  <TABLE border="0" cellSpacing="0" cellPadding="0" width="100%">
 					
@@ -182,6 +183,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					
 				  </TABLE>
 				  </ul>
+=======
+				  <TABLE border="0" cellSpacing="0" cellPadding="0" width="100%">
+					<TBODY>
+					  <TR>
+						<TH width="100"> 运单号</TH>
+						<TH width="100"> 更新时间 </TH>
+						<TH width="100"> 内容 </TH>
+						<TH width="100"> 状态 </TH>
+					  </TR>
+					</TBODY>
+				   <c:forEach items="${wlist }" var="list">
+					<TBODY id="tb-820609066" class="parent-815410507">
+					  <TR id="track820609066" oty="0">
+						<TD><DIV class="o-type"> ${list.id } </DIV>
+						</TD>
+						<TD><SPAN class="ftx-03">${list.date } <BR />
+						  </SPAN>
+						</TD>
+						<TD>${list.content } <BR />
+						</TD>
+						<TD><c:if test="${list.state==0 }">未完成</c:if><c:if test="${list.state==1 }">已完成</c:if><BR />
+						</TD>
+					  </TR>
+					</TBODY>
+					</c:forEach>
+					
+				  </TABLE>
+>>>>>>> c30f14049065d0f3d6de5253e603e2fe930dd3db
 				</DIV>
 			  </DIV>
 			</DIV>
@@ -233,7 +262,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 
 			<% if(login){ %>
+<<<<<<< HEAD
 				<a href="#"> 欢迎您, 物流：${ cookie.logistic.value }. </a>&nbsp;&nbsp; <span class="lg-bar">|</span>
+=======
+				<a href="/ShopWap/buy/myOrderServlet.do?action=myw"> 欢迎您, 物流：${ cookie.logistic.value }. </a>&nbsp;&nbsp; <span class="lg-bar">|</span>
+>>>>>>> c30f14049065d0f3d6de5253e603e2fe930dd3db
 				<a href="../logistic/logistic.do?action=logout">退出</a>
 			<% }
 				else { %> </a>
